@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WinterLane: a snowy-road lane detection dataset and dynamic angle-aware network.">
+  <title>WinterLane | Project Page</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="container nav-wrap">
+    <a class="brand" href="#top">WinterLane</a>
+    <nav class="nav-links" aria-label="Primary navigation"><a href="#video">Videos</a><a href="#dataset">Dataset</a><a href="#method">Method</a><a href="#results">Results</a></nav>
+    <button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </div><nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="#video">Videos</a><a href="#dataset">Dataset</a><a href="#method">Method</a><a href="#results">Results</a></nav></header>
+  <main id="top">
+    <section class="hero"><div class="container hero-inner">
+      <div class="eyebrow">Lane detection in snowy environments</div>
+      <h1>WinterLane</h1>
+      <p class="subtitle">A Dynamic Angle-Aware Network with Multimodal Fusion for Robust Lane Detection in Snowy Environments</p>
+      <p class="authors">Chengzhe Jiao<sup>1</sup>, Lina Wu<sup>2</sup>, Yusheng Ci<sup>1</sup>, Ci Liang<sup>1</sup>, Changyun Yang<sup>1</sup></p>
+      <div class="affiliations"><div><sup>1</sup>School of Transportation Science and Engineering, Harbin Institute of Technology</div><div><sup>2</sup>School of Automobile and Traffic Engineering, Heilongjiang Institute of Technology</div></div>
+      <div class="button-row"><a class="btn primary" href="#video">Watch demonstrations</a><span class="btn pending">Paper · coming soon</span><a class="btn" href="https://github.com/HIT-PathFinder-Lab/WinterLane" target="_blank" rel="noopener noreferrer">Dataset</a></div>
+    </div></section>
+    <section id="video" class="section video-section"><div class="container">
+      <div class="section-heading"><span class="video-eyebrow">WinterLane in action</span><h2>Video demonstrations</h2><p>Lane detection across 12 clips from seven WinterLane categories. Videos play muted when in view; the upper-left overlay reports the method's running speed in FPS.</p></div>
+      <div class="video-grid">
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Snow Cover I lane detection demonstration"><source src="assets/videos/snow_cover_1.mp4" type="video/mp4"></video><h3>Snow Cover I</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Snow Cover II lane detection demonstration"><source src="assets/videos/snow_cover_2.mp4" type="video/mp4"></video><h3>Snow Cover II</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Snow Film I lane detection demonstration"><source src="assets/videos/snow_film_1.mp4" type="video/mp4"></video><h3>Snow Film I</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Snow Film II lane detection demonstration"><source src="assets/videos/snow_film_2.mp4" type="video/mp4"></video><h3>Snow Film II</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Windshield Snowflakes I lane detection demonstration"><source src="assets/videos/windshield_1.mp4" type="video/mp4"></video><h3>Windshield Snowflakes I</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Windshield Snowflakes II lane detection demonstration"><source src="assets/videos/windshield_2.mp4" type="video/mp4"></video><h3>Windshield Snowflakes II</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Light Influence I lane detection demonstration"><source src="assets/videos/Light_influence_1.mp4" type="video/mp4"></video><h3>Light Influence I</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Light Influence II lane detection demonstration"><source src="assets/videos/Light_influence_2.mp4" type="video/mp4"></video><h3>Light Influence II</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Congestion I lane detection demonstration"><source src="assets/videos/congestion_1.mp4" type="video/mp4"></video><h3>Congestion I</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Congestion II lane detection demonstration"><source src="assets/videos/congestion_2.mp4" type="video/mp4"></video><h3>Congestion II</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Normality lane detection demonstration"><source src="assets/videos/Normailty_1.mp4" type="video/mp4"></video><h3>Normality</h3></article>
+        <article class="video-card"><video controls loop muted playsinline preload="metadata" aria-label="Faded Lane lane detection demonstration"><source src="assets/videos/fade_lane.mp4" type="video/mp4"></video><h3>Faded Lane</h3></article>
+      </div>
+    </div></section>
+    <section id="dataset" class="section alt dataset-intro"><div class="container">
+      <div class="section-heading"><h2>Dataset</h2><p>A real-world benchmark for lane detection on snowy urban and campus roads.</p></div>
+      <figure class="media-card large-figure dataset-figure"><img src="assets/images/winterLane.png" alt="WinterLane dataset category proportions and example images for Faded Lane, Windshield Snowflakes, Light Influence, Congestion, Normality, Snow Film, and Snow Cover" loading="lazy"><figcaption>Category proportions and representative road scenes in WinterLane.</figcaption></figure>
+      <div class="narrow"><p class="lead">WinterLane was collected from 121 one-minute dashcam videos recorded in Harbin, China. It contains 11,895 lane-instance annotated images at 1920 × 1080 resolution, with 10,991 images for training and 904 for testing. Each image provides lane annotations, keypoint coordinates, instance masks, and annotation visualizations.</p></div>
+    </div></section>
+    <section id="method" class="section alt"><div class="container"><div class="section-heading"><h2>Method</h2><p>Predicted lane orientation guides feature aggregation and final lane coordinate refinement.</p></div><figure class="media-card large-figure"><img src="assets/images/method.png" alt="WinterLane method architecture, including angle decoder, DASAM, and MFLD" loading="lazy"><figcaption>Architecture of the proposed lane detection framework.</figcaption></figure><div class="feature-grid"><article class="feature-card"><div class="feature-label">Feature aggregation</div><h3>DASAM</h3><p>Aggregates contextual features along predicted lane orientations during training.</p></article><article class="feature-card"><div class="feature-label">Lane coordinates</div><h3>MFLD</h3><p>Combines lane probability maps and global orientation angles through anchor selection, refinement, and coordinate fusion.</p></article></div></div></section>
+    <section id="results" class="section"><div class="container"><div class="section-heading"><h2>Results</h2></div>
+      <figure class="paper-table-figure"><a href="assets/images/winterlane-table.svg" target="_blank" rel="noopener noreferrer"><img src="assets/images/winterlane-table.svg" alt="Comparison of lane detection methods on the WinterLane dataset" loading="lazy"></a><figcaption>Comparison with existing methods on the WinterLane dataset. Only methods with publicly available code are included. All values except FPS are F1 scores (%). Bold values indicate the best result in each column. Click the table to view it at full size.</figcaption></figure>
+      <figure class="paper-table-figure"><a href="assets/images/culane-table.svg" target="_blank" rel="noopener noreferrer"><img src="assets/images/culane-table.svg" alt="Comparison of lane detection methods on the CULane dataset" loading="lazy"></a><figcaption>Comparison with existing methods on the CULane dataset. All values except FPS and Cross are F1 scores (%); Cross denotes false-positive lane detections. Bold values indicate the best result in each column. An asterisk marks FPS re-evaluated under the same setting as DASAM. Click the table to view it at full size.</figcaption></figure>
+      <h3 class="subheading">Qualitative results on WinterLane</h3><figure class="media-card large-figure"><img src="assets/images/results.png" alt="Qualitative comparison of lane detection results across eight road scenes in the WinterLane dataset" loading="lazy"><figcaption>Qualitative comparison of lane detection results across diverse road scenes in the WinterLane dataset. From top to bottom: Normality, Glare, Nighttime, Congestion, Faded Lane, Snow Cover, Windshield Snowflakes, and Snow Film. From left to right: original image, ground-truth lane mask, DASAM, line-anchor-based LaneATT, segmentation-based GANet, and row-anchor-based UFLD. <a href="assets/images/results.png" target="_blank" rel="noopener noreferrer">Open full-resolution image</a>.</figcaption></figure>
+
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><p>WinterLane · HIT PathFinder Lab</p><p>Hosted with GitHub Pages</p></div></footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
